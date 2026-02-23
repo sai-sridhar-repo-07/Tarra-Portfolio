@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(timeout 10 npm run dev:*)",
+      "Bash(curl -s \"http://localhost:5176/src/blog/posts/understanding-transformers.md?import&raw\")",
+      "Bash(node -e:*)",
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "Bash(git --version:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
