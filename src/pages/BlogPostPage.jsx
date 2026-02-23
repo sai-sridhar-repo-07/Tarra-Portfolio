@@ -151,8 +151,30 @@ export default function BlogPostPage() {
     return () => observer.disconnect()
   }, [post])
 
-  // Show nothing while data resolves (Suspense handles the loader)
-  if (!post) return null
+  // Show skeleton while data resolves — never render a blank screen
+  if (!post) return (
+    <div className="relative min-h-screen pt-24 pb-24">
+      <div className="section-container">
+        <div className="mb-8">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-sm transition-colors">
+            <FiArrowLeft size={14} /> Back to Blog
+          </Link>
+        </div>
+        <div className="max-w-3xl animate-pulse">
+          <div className="h-4 bg-white/5 rounded w-24 mb-6" />
+          <div className="h-10 bg-white/5 rounded w-3/4 mb-3" />
+          <div className="h-10 bg-white/5 rounded w-1/2 mb-8" />
+          <div className="flex gap-4 mb-10">
+            <div className="h-4 bg-white/5 rounded w-32" />
+            <div className="h-4 bg-white/5 rounded w-24" />
+          </div>
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="h-4 bg-white/5 rounded mb-3" style={{ width: `${85 + (i % 3) * 5}%` }} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 
   const headings = extractHeadings(post.content)
   const pageUrl = `https://saisridhartarra.com/blog/${post.slug}`
@@ -184,9 +206,9 @@ export default function BlogPostPage() {
         <div className="section-container relative z-10">
           {/* Back link */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 1, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
             className="mb-8"
           >
             <Link
@@ -200,9 +222,9 @@ export default function BlogPostPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-12 items-start">
             {/* Main article */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Header */}
               <header className="mb-10">
@@ -288,9 +310,9 @@ export default function BlogPostPage() {
 
             {/* TOC sidebar */}
             <motion.aside
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="hidden lg:block"
             >
               <TableOfContents headings={headings} activeId={activeHeading} />

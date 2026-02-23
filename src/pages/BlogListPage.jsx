@@ -21,11 +21,11 @@ function BlogCard({ post, index }) {
   const color = tagColors[post.category] || tagColors.default
 
   return (
-    // Direct per-card animation — more reliable than stagger-container pattern
+    // Cards are visible immediately (opacity: 1) — only animate position for polish
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 1, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.35, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(139,92,246,0.12)' }}
       className="group glass rounded-2xl border border-white/5 hover:border-purple-500/30 overflow-hidden transition-colors duration-300"
     >
