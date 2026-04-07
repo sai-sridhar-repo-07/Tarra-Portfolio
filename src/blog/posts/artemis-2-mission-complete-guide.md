@@ -20,9 +20,6 @@ This is Artemis II. Not a landing — a proving flight. A 10-day journey around 
 
 ## The Crew
 
-![Artemis II Crew Official Portrait](../../assets/blog/artemis2/crew-portrait.jpg)
-*Image credit: NASA. Official Artemis II crew portrait.*
-
 Artemis II carries four astronauts, each making history in their own right.
 
 ### Reid Wiseman — Commander (NASA)
@@ -82,9 +79,6 @@ The path from Artemis I's splashdown to Artemis II's launch took over three year
 
 ## The Mission: Day by Day
 
-![SLS Launch from Pad 39B](../../assets/blog/artemis2/sls-launch.jpg)
-*Image credit: NASA. Space Launch System lifting off from Kennedy Space Center, April 1, 2026.*
-
 ### Day 1 — High Earth Orbit System Checkout
 After reaching a 23.5-hour elliptical high Earth orbit, the crew began the most critical early phase: **verifying every Orion system works in space before committing to the Moon**.
 
@@ -98,18 +92,20 @@ The ICPS fired one final time: a 5-minute, 49-second burn that accelerated Orion
 This burn placed the crew on a **free-return trajectory**: a precisely calculated arc that loops around the Moon and returns to Earth using only gravity, requiring no additional propulsion for the return. If the main engine failed tomorrow, the crew would still come home. This passive safety margin was a deliberate design choice absent from Apollo missions.
 
 ### Days 3–5 — The Outbound Journey
-![Orion Spacecraft in Deep Space](../../assets/blog/artemis2/orion-spacecraft.jpg)
-*Image credit: NASA. Orion capsule during transit to the Moon.*
+
+![Astronaut looking at Earth through Orion's window](../../assets/blog/artemis2/earth-from-orion-window.png)
+*Image credit: NASA. An Artemis II crew member gazes at Earth through Orion's window during the outbound transit to the Moon.*
 
 Three days of cruise, system monitoring, and crew activities. The crew:
 - Tested manual attitude control of Orion (the first human handling of a deep-space vehicle in over 50 years)
 - Completed spacesuit fit checks and certification runs — verifying all four suits are ready for emergency use
 - Conducted medical monitoring including radiation dosimetry readings (radiation in deep space is significantly higher than on the ISS)
-- Observed Earth shrinking to a bright point in the window — the first humans to see it that way since Gene Cernan's crew in December 1972
+- Observed Earth shrinking to a brilliant sphere in the window — the first humans to see it that way since Gene Cernan's crew in December 1972
 
 ### Day 6 — The Lunar Flyby
-![Artemis II Lunar Flyby](../../assets/blog/artemis2/lunar-flyby.jpg)
-*Image credit: NASA/CSA. Orion's closest approach to the Moon during Artemis II.*
+
+![Orion spacecraft with the Moon visible in the distance](../../assets/blog/artemis2/orion-moon-in-distance.png)
+*Image credit: NASA. The Orion spacecraft with the Moon visible in the distance — captured during Artemis II's deep space transit.*
 
 The emotional and scientific peak of the mission.
 
