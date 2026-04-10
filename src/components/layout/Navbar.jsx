@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Projects', href: '/#projects' },
   { label: 'Experience', href: '/#experience' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Code Drops', href: '/code-drops' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -19,6 +20,7 @@ function NavLink({ href, label, onClick }) {
 
   const isActive =
     (href === '/blog' && location.pathname.startsWith('/blog')) ||
+    (href === '/code-drops' && location.pathname === '/code-drops') ||
     (href === '/' && location.pathname === '/')
 
   const handleClick = (e) => {
