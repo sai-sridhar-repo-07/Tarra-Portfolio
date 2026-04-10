@@ -82,27 +82,12 @@ function ProfileBlock() {
           transition={{ duration: 3, repeat: Infinity }}
         />
 
-        {/* Photo placeholder */}
-        <div
-          className="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden"
-          style={{ background: 'linear-gradient(160deg, #1A1A1A 0%, #2A2A2A 100%)' }}
-        >
-          {/* Silhouette avatar */}
-          <div className="absolute inset-0 flex items-end justify-center pb-6">
-            <div
-              className="w-36 h-48 rounded-t-full opacity-50"
-              style={{ background: 'linear-gradient(to top, #8B5CF6, #A78BFA40)' }}
-            />
-          </div>
-          {/* Shimmer sweep */}
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%)',
-              backgroundSize: '200% 100%',
-            }}
-            animate={{ backgroundPosition: ['200% 0', '-200% 0'] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'linear', repeatDelay: 2 }}
+        {/* Profile photo */}
+        <div className="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden">
+          <img
+            src="/profile.jpg"
+            alt="Sai Sridhar Tarra"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-dark to-transparent" />
         </div>
