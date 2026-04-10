@@ -8,12 +8,12 @@ export const personal = {
   linkedin: 'https://www.linkedin.com/in/sai-sridhar-tarra-2a77561a2/',
   twitter: 'https://x.com/sridhar_3009',
   resume: '/resume.pdf',
-  bio: `I'm a Software Developer and Machine Learning enthusiast currently working as an LMS Technical Analyst & Data Analyst at Accenture. I build data-driven systems, full-stack platforms, and applied ML solutions that solve real-world problems.`,
-  longBio: `I currently work at Accenture supporting SAP SuccessFactors Learning, where I analyze enterprise-scale LMS data, automate workflows, and design analytics dashboards for global clients.
+  bio: `I'm a Machine Learning Engineer at Accenture and founder of MailAir. I build production ML systems, LLM-powered products, and data-driven applications that solve real-world problems at scale.`,
+  longBio: `I work as a Machine Learning Engineer at Accenture, where I design and deploy ML pipelines, build NLP workflows, and deliver data-driven systems for enterprise clients at scale.
 
-Beyond my professional role, I actively build scalable systems and AI projects. I developed DemandCast, a large-scale demand forecasting system using LSTM, XGBoost, and FastAPI, and SkillSwap, a real-time peer-to-peer microlearning platform powered by WebRTC and a credit-based economy.
+Beyond my day job, I'm the founder of MailAir — an AI-powered email assistant that uses LLMs and RAG to auto-draft replies, summarise threads, and surface high-priority emails.
 
-My interests lie in Machine Learning, backend systems, and building intelligent applications that combine strong engineering fundamentals with data-driven decision making. I continuously practice DSA and competitive programming, and I regularly explore research papers to strengthen my AI foundations.`,
+My interests lie in large language models, MLOps, and backend systems. I continuously practice DSA, explore research papers from NeurIPS and ICML, and build projects that push the boundary between research and production.`,
   stats: [
     { label: 'Years Experience', value: 1, suffix: '+', },
     { label: 'Projects Built', value: 5, suffix: '+', },

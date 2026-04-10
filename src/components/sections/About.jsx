@@ -169,13 +169,13 @@ function AnimatedBio() {
     <div ref={ref} className="space-y-3">
       <p className="bio-line text-zinc-300 text-base md:text-lg leading-relaxed">{personal.bio}</p>
       <p className="bio-line text-zinc-400 text-sm leading-relaxed">
-        I've worked at{' '}
-        <span className="text-white font-medium">Accenture</span>,{' '}
-        <span className="text-white font-medium">Career Crate</span> — building infrastructure that powers frontier AI research.
+        Currently a{' '}
+        <span className="text-white font-medium">Machine Learning Engineer at Accenture</span>{' '}
+        and founder of{' '}
+        <span className="text-white font-medium">MailAir</span> — an LLM-powered email assistant built on RAG and FastAPI.
       </p>
       <p className="bio-line text-zinc-400 text-sm leading-relaxed">
-        When I'm not training models, I write about ML, contribute to open source, and explore the
-        latest from NeurIPS and ICML.
+        When I'm not shipping models, I make coding reels on Instagram, solve DSA problems, and dig into the latest from NeurIPS and ICML.
       </p>
     </div>
   )
