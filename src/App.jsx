@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home'))
 const BlogListPage = lazy(() => import('./pages/BlogListPage'))
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage'))
 const ReelLinksPage = lazy(() => import('./pages/ReelLinksPage'))
+const ReelLinkDetailPage = lazy(() => import('./pages/ReelLinkDetailPage'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // ─── Page Transition Wrapper ──────────────────────────────────────────────────
@@ -75,6 +76,14 @@ function AppRoutes() {
           element={
             <PageTransition>
               <ReelLinksPage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/code-drops/:slug"
+          element={
+            <PageTransition>
+              <ReelLinkDetailPage />
             </PageTransition>
           }
         />

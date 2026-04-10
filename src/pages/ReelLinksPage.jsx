@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { FiGithub, FiExternalLink, FiTag } from 'react-icons/fi'
+import { FiArrowRight, FiTag } from 'react-icons/fi'
 import { SiInstagram } from 'react-icons/si'
 import { reelLinks, getAllTags } from '../data/reelLinks'
 import SectionHeading from '../components/ui/SectionHeading'
@@ -38,6 +39,7 @@ function ReelCard({ item, index }) {
       whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(139,92,246,0.12)' }}
       className="group glass rounded-2xl border border-white/5 hover:border-purple-500/30 overflow-hidden transition-colors duration-300 flex flex-col"
     >
+      <Link to={`/code-drops/${item.slug}`} className="flex flex-col flex-1">
       {/* Tag colour bar */}
       <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${barColor}, ${barColor}80)` }} />
 
@@ -66,22 +68,12 @@ function ReelCard({ item, index }) {
         {/* Footer — date + CTA */}
         <div className="flex items-center justify-between pt-4 border-t border-white/5">
           <span className="text-zinc-600 text-xs">{item.date}</span>
-
-          <motion.a
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-purple-500/40 text-purple-300 hover:bg-purple-500/10 hover:border-purple-500 transition-all duration-200"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <FiGithub size={12} />
-            View Code
-            <FiExternalLink size={10} className="opacity-60" />
-          </motion.a>
+          <span className="text-purple-400 text-xs font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Open <FiArrowRight size={11} />
+          </span>
         </div>
       </div>
+      </Link>
     </motion.div>
   )
 }

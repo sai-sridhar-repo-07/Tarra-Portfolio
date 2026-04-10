@@ -5,6 +5,7 @@
 // Entry shape:
 // {
 //   id:          unique string (e.g. 'lstm-demand-01')
+//   slug:        URL-safe string — becomes /code-drops/<slug> (shareable per reel)
 //   title:       reel / snippet title
 //   description: one-line explanation shown on the card
 //   tag:         'Python' | 'JavaScript' | 'ML' | 'SQL' | 'DSA' | 'Data' | 'System Design' | etc.
@@ -15,6 +16,7 @@
 export const reelLinks = [
   {
     id: 'second-brain-01',
+    slug: 'second-brain',
     title: 'Second Brain',
     description: 'A personal knowledge management system to capture, organise, and retrieve notes and ideas.',
     tag: 'Full Stack',
@@ -23,6 +25,7 @@ export const reelLinks = [
   },
   {
     id: 'auto-apply-jobs-01',
+    slug: 'auto-apply-jobs',
     title: 'Auto Apply Jobs',
     description: 'Automates job applications across platforms — scrapes listings and submits forms end-to-end.',
     tag: 'Automation',
@@ -31,6 +34,7 @@ export const reelLinks = [
   },
   {
     id: 'jio-extension-01',
+    slug: 'jio-extension',
     title: 'Jio Extension',
     description: 'Browser extension to seek and control Jio live streams directly from the toolbar.',
     tag: 'JavaScript',
@@ -39,6 +43,7 @@ export const reelLinks = [
   },
   {
     id: 'yt-shorts-pipeline-01',
+    slug: 'auto-deploy-youtube-shorts',
     title: 'Auto Deploy YouTube Shorts',
     description: 'End-to-end pipeline that auto-generates, renders, and publishes YouTube Shorts on a schedule.',
     tag: 'Automation',
@@ -50,4 +55,8 @@ export const reelLinks = [
 export function getAllTags() {
   const tags = ['All', ...new Set(reelLinks.map((r) => r.tag))]
   return tags
+}
+
+export function getBySlug(slug) {
+  return reelLinks.find((r) => r.slug === slug) || null
 }
