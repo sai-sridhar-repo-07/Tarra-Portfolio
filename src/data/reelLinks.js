@@ -50,6 +50,15 @@ export const reelLinks = [
     link: 'https://github.com/sai-sridhar-repo-07/youtube-shorts-pipeline',
     date: '2026-04-10',
   },
+  {
+    id: 'loot-drop-01',
+    slug: 'loot-drop',
+    title: 'Loot Drop',
+    description: 'A startup worth checking out.',
+    tag: 'Crazy Websites',
+    link: 'https://www.loot-drop.io/',
+    date: '2026-04-12',
+  },
 ]
 
 export function getAllTags() {

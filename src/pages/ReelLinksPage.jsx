@@ -15,9 +15,10 @@ const tagColors = {
   SQL:             { bg: '#F472B615', text: '#F472B6', border: '#F472B630' },
   Data:            { bg: '#34D39915', text: '#34D399', border: '#34D39930' },
   'System Design': { bg: '#A78BFA15', text: '#A78BFA', border: '#A78BFA30' },
-  'Full Stack':    { bg: '#38BDF815', text: '#38BDF8', border: '#38BDF830' },
-  Automation:      { bg: '#FB923C15', text: '#FB923C', border: '#FB923C30' },
-  default:         { bg: '#6B728015', text: '#6B7280', border: '#6B728030' },
+  'Full Stack':      { bg: '#38BDF815', text: '#38BDF8', border: '#38BDF830' },
+  Automation:        { bg: '#FB923C15', text: '#FB923C', border: '#FB923C30' },
+  'Crazy Websites':  { bg: '#F43F5E15', text: '#F43F5E', border: '#F43F5E30' },
+  default:           { bg: '#6B728015', text: '#6B7280', border: '#6B728030' },
 }
 
 function tagStyle(tag) {
