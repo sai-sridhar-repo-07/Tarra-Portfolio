@@ -21,6 +21,7 @@ export const reelLinks = [
     description: 'A personal knowledge management system to capture, organise, and retrieve notes and ideas.',
     tag: 'Full Stack',
     link: 'https://github.com/sai-sridhar-repo-07/Second-Brain',
+    cta: 'View Source Code',
     date: '2026-04-10',
   },
   {
@@ -30,6 +31,7 @@ export const reelLinks = [
     description: 'Automates job applications across platforms — scrapes listings and submits forms end-to-end.',
     tag: 'Automation',
     link: 'https://github.com/sai-sridhar-repo-07/Auto-Apply-Jobs',
+    cta: 'View Source Code',
     date: '2026-04-10',
   },
   {
@@ -39,6 +41,7 @@ export const reelLinks = [
     description: 'Browser extension to seek and control Jio live streams directly from the toolbar.',
     tag: 'JavaScript',
     link: 'https://github.com/sai-sridhar-repo-07/live-stream-seeker',
+    cta: 'View Source Code',
     date: '2026-04-10',
   },
   {
@@ -48,6 +51,7 @@ export const reelLinks = [
     description: 'End-to-end pipeline that auto-generates, renders, and publishes YouTube Shorts on a schedule.',
     tag: 'Automation',
     link: 'https://github.com/sai-sridhar-repo-07/youtube-shorts-pipeline',
+    cta: 'View Source Code',
     date: '2026-04-10',
   },
   {
@@ -57,6 +61,7 @@ export const reelLinks = [
     description: 'A startup worth checking out.',
     tag: 'Crazy Websites',
     link: 'https://www.loot-drop.io/',
+    cta: 'Visit Website',
     date: '2026-04-12',
   },
 ]

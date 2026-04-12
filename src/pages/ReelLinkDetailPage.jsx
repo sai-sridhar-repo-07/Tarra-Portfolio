@@ -105,7 +105,7 @@ export default function ReelLinkDetailPage() {
                 className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-semibold text-sm text-white transition-all duration-200"
                 style={{ background: `linear-gradient(135deg, #8B5CF6, #06B6D4)` }}
               >
-                Open Link
+                {item.cta || 'Open Link'}
                 <FiExternalLink size={13} className="opacity-70" />
               </motion.a>
 
