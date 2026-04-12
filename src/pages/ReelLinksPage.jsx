@@ -70,7 +70,7 @@ function ReelCard({ item, index }) {
         <div className="flex items-center justify-between pt-4 border-t border-white/5">
           <span className="text-zinc-600 text-xs">{item.date}</span>
           <span className="text-purple-400 text-xs font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            Open <FiArrowRight size={11} />
+            Visit <FiArrowRight size={11} />
           </span>
         </div>
       </div>

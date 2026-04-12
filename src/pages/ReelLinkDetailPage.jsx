@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { FiGithub, FiExternalLink, FiArrowLeft, FiTag } from 'react-icons/fi'
+import { FiExternalLink, FiArrowLeft, FiTag } from 'react-icons/fi'
 import { getBySlug } from '../data/reelLinks'
 
 const tagColors = {
@@ -105,8 +105,7 @@ export default function ReelLinkDetailPage() {
                 className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-semibold text-sm text-white transition-all duration-200"
                 style={{ background: `linear-gradient(135deg, #8B5CF6, #06B6D4)` }}
               >
-                <FiGithub size={16} />
-                View Source Code on GitHub
+                Open Link
                 <FiExternalLink size={13} className="opacity-70" />
               </motion.a>
 
