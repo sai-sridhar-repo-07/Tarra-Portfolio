@@ -55,6 +55,16 @@ export const reelLinks = [
     date: '2026-04-10',
   },
   {
+    id: 'lumina-drift-01',
+    slug: 'lumina-drift',
+    title: 'Lumina Drift',
+    description: 'An interactive visual experience — generative light and motion in the browser.',
+    tag: 'Crazy Websites',
+    link: 'https://sai-sridhar-repo-07.github.io/Lumina-Drift/',
+    cta: 'Visit Website',
+    date: '2026-04-14',
+  },
+  {
     id: 'loot-drop-01',
     slug: 'loot-drop',
     title: 'Loot Drop',
