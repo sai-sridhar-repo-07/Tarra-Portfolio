@@ -65,6 +65,16 @@ export const reelLinks = [
     date: '2026-04-14',
   },
   {
+    id: 'mario-game-01',
+    slug: 'mario-game',
+    title: 'Mario Game',
+    description: 'Browser-based Mario game built from scratch in JavaScript.',
+    tag: 'JavaScript',
+    link: 'https://github.com/sai-sridhar-repo-07/Mario-Game',
+    cta: 'View Source Code',
+    date: '2026-04-19',
+  },
+  {
     id: 'loot-drop-01',
     slug: 'loot-drop',
     title: 'Loot Drop',
