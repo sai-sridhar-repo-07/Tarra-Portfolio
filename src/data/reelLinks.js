@@ -75,6 +75,16 @@ export const reelLinks = [
     date: '2026-04-19',
   },
   {
+    id: 'atxp-chat-01',
+    slug: 'atxp-chat',
+    title: 'ATXP Chat',
+    description: 'AI chat app with all major LLMs in one place — GPT, Claude, Gemini and more under one roof.',
+    tag: 'Crazy Websites',
+    link: 'https://chat.atxp.ai/',
+    cta: 'Visit Website',
+    date: '2026-04-22',
+  },
+  {
     id: 'loot-drop-01',
     slug: 'loot-drop',
     title: 'Loot Drop',
