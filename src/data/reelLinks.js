@@ -75,6 +75,16 @@ export const reelLinks = [
     date: '2026-04-19',
   },
   {
+    id: 'free-api-explorer-01',
+    slug: 'free-api-explorer',
+    title: 'Free API Explorer',
+    description: 'Browse and test free public APIs directly in the browser — no auth, no setup.',
+    tag: 'Crazy Websites',
+    link: 'https://sai-sridhar-repo-07.github.io/Free-API-Explorer-/',
+    cta: 'Visit Website',
+    date: '2026-04-30',
+  },
+  {
     id: 'atxp-chat-01',
     slug: 'atxp-chat',
     title: 'ATXP Chat',
