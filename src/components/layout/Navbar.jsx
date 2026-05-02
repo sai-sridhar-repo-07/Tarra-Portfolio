@@ -100,16 +100,18 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <motion.div
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-              className="flex items-center font-mono font-bold text-lg tracking-tight select-none"
+              className="flex items-center select-none"
             >
-              <span style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                &lt;
+              <span className="font-display font-bold text-xl tracking-tight text-white lowercase">
+                sai
               </span>
-              <span className="text-white mx-0.5">Sai</span>
-              <span style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                /&gt;
+              <span
+                className="font-display font-black text-2xl leading-none"
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+              >
+                .
               </span>
             </motion.div>
           </Link>
