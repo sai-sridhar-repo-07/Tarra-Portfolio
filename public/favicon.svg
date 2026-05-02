@@ -4,33 +4,35 @@
       <stop offset="0%" stop-color="#8B5CF6"/>
       <stop offset="100%" stop-color="#06B6D4"/>
     </linearGradient>
-    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.6"/>
-    </linearGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="100" height="100" rx="22" fill="#0A0A0F"/>
+  <rect width="100" height="100" rx="20" fill="#0A0A0F"/>
 
-  <!-- Subtle gradient border -->
-  <rect width="100" height="100" rx="22" fill="none" stroke="url(#border)" stroke-width="1.5"/>
-
-  <!-- S letterform — bold, slightly left of center -->
+  <!-- < bracket -->
   <text
-    x="38"
-    y="67"
-    font-family="'Inter', 'SF Pro Display', system-ui, sans-serif"
-    font-size="62"
-    font-weight="900"
+    x="10" y="66"
+    font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+    font-size="38"
+    font-weight="700"
+    fill="url(#g)"
+  >&lt;</text>
+
+  <!-- S -->
+  <text
+    x="36" y="66"
+    font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+    font-size="38"
+    font-weight="700"
     fill="white"
-    text-anchor="middle"
-    letter-spacing="-2"
   >S</text>
 
-  <!-- Dot — the "AI" in Sai, sits top-right like a badge -->
-  <circle cx="72" cy="28" r="9" fill="url(#g)"/>
-
-  <!-- Inner dot highlight -->
-  <circle cx="70" cy="26" r="3.5" fill="white" opacity="0.35"/>
+  <!-- /> -->
+  <text
+    x="60" y="66"
+    font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+    font-size="38"
+    font-weight="700"
+    fill="url(#g)"
+  >/&gt;</text>
 </svg>
