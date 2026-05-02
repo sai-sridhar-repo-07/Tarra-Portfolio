@@ -104,11 +104,11 @@ export default function Navbar() {
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               className="flex items-center select-none"
             >
-              <span className="font-display font-bold text-xl tracking-tight text-white lowercase">
-                sai
+              <span className="font-display font-bold text-2xl tracking-tight text-white lowercase">
+                tarra
               </span>
               <span
-                className="font-display font-black text-2xl leading-none"
+                className="font-display font-black text-3xl leading-none"
                 style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               >
                 .
