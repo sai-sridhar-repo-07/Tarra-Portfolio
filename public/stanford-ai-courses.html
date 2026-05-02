@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanford AI & ML Lecture Series — Curated by Sai Sridhar Tarra</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Watermark ── */
+    body::before {
+      content: "Sai Sridhar Tarra";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-35deg);
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(99, 102, 241, 0.06);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    /* ── Base ── */
+    body {
+      background: #0a0a0f;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .header p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+
+    .curator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .curator span {
+      color: #c7d2fe;
+      font-weight: 600;
+    }
+
+    /* ── Stats bar ── */
+    .stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #a5b4fc;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-num {
+      width: 36px;
+      height: 36px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .section h2 .course-code {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6366f1;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      background: rgba(99,102,241,0.05);
+    }
+
+    .card p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 3px 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .watch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .watch-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .watch-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99,102,241,0.15), transparent);
+      margin: 32px 0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .watermark-footer {
+      font-size: 0.8rem;
+      color: #334155;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .footer p {
+      color: #475569;
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body::before { color: rgba(99,102,241,0.08); font-size: 5rem; }
+      .card { break-inside: avoid; }
+      .watch-btn { background: #6366f1 !important; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .stats { gap: 20px; }
+      .stat-num { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Free Stanford Lectures</div>
+    <h1>The Complete Stanford AI & ML Lecture Collection</h1>
+    <p>9 flagship Stanford courses — everything from classical ML to LLMs, all free on YouTube.</p>
+    <div class="curator">
+      Curated by <span>Sai Sridhar Tarra</span>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Courses</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">300+</span>
+      <span class="stat-label">Lectures</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Free</span>
+      <span class="stat-label">Forever</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Stanford</span>
+      <span class="stat-label">University</span>
+    </div>
+  </div>
+
+  <!-- 1. CS229 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Machine Learning <span class="course-code">CS229</span></h2>
+    </div>
+    <div class="card">
+      <p>Andrew Ng's legendary ML course. Linear regression, logistic regression, SVMs, neural networks, unsupervised learning, EM algorithm. The foundation every ML engineer needs before anything else.</p>
+      <div class="tags">
+        <span class="tag">Supervised Learning</span>
+        <span class="tag">SVMs</span>
+        <span class="tag">Neural Networks</span>
+        <span class="tag">Andrew Ng</span>
+        <span class="tag">Beginner → Intermediate</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rOca_Ovz1DvdtWuz8BfSWL2" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2. CS231n -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Deep Learning for Computer Vision <span class="course-code">CS231n</span></h2>
+    </div>
+    <div class="card">
+      <p>CNNs, image classification, object detection, segmentation, generative models, and the full visual recognition pipeline. Taught by Fei-Fei Li and team — the definitive vision DL course.</p>
+      <div class="tags">
+        <span class="tag">CNNs</span>
+        <span class="tag">ResNet</span>
+        <span class="tag">GANs</span>
+        <span class="tag">Object Detection</span>
+        <span class="tag">Fei-Fei Li</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3. CS224N -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>NLP with Deep Learning <span class="course-code">CS224N</span></h2>
+    </div>
+    <div class="card">
+      <p>Word embeddings, RNNs, attention, the transformer architecture, pretraining (BERT, GPT), and modern NLP systems. If you want to understand how LLMs work from the ground up — start here.</p>
+      <div class="tags">
+        <span class="tag">Transformers</span>
+        <span class="tag">BERT</span>
+        <span class="tag">GPT</span>
+        <span class="tag">Word2Vec</span>
+        <span class="tag">Chris Manning</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. CS224W -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>Machine Learning with Graphs <span class="course-code">CS224W</span></h2>
+    </div>
+    <div class="card">
+      <p>Graph neural networks, node embeddings, knowledge graphs, GraphSAGE, GCNs, and applications in social networks, biology, and recommendation systems. Essential for Graph RAG and knowledge graph work.</p>
+      <div class="tags">
+        <span class="tag">GNNs</span>
+        <span class="tag">GraphSAGE</span>
+        <span class="tag">Knowledge Graphs</span>
+        <span class="tag">Node Embeddings</span>
+        <span class="tag">Jure Leskovec</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rN4wG6Nk6sNpTEbuOSosZdX" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5. CS330 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Deep Multi-Task & Meta Learning <span class="course-code">CS330</span></h2>
+    </div>
+    <div class="card">
+      <p>How models learn to learn. MAML, Reptile, few-shot learning, transfer learning, multi-task architectures, and the techniques behind models that generalize from very little data. Taught by Chelsea Finn.</p>
+      <div class="tags">
+        <span class="tag">Meta-Learning</span>
+        <span class="tag">MAML</span>
+        <span class="tag">Few-Shot Learning</span>
+        <span class="tag">Transfer Learning</span>
+        <span class="tag">Chelsea Finn</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rPt5D0zs3YhbWSZA8Q_DyiJ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6. CS234 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Reinforcement Learning <span class="course-code">CS234</span></h2>
+    </div>
+    <div class="card">
+      <p>MDPs, Q-learning, policy gradients, actor-critic methods, deep RL, and exploration strategies. The math and intuition behind training agents that learn from reward — including the foundations of RLHF.</p>
+      <div class="tags">
+        <span class="tag">MDPs</span>
+        <span class="tag">Q-Learning</span>
+        <span class="tag">Policy Gradient</span>
+        <span class="tag">RLHF Foundations</span>
+        <span class="tag">Emma Brunskill</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7. CS25 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Transformers United <span class="course-code">CS25</span></h2>
+    </div>
+    <div class="card">
+      <p>Guest lectures from researchers at OpenAI, DeepMind, Google Brain, and Anthropic on cutting-edge transformer applications — vision, language, robotics, science, and beyond. Closest you get to a frontier research seminar for free.</p>
+      <div class="tags">
+        <span class="tag">Frontier Research</span>
+        <span class="tag">Vision Transformers</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Guest Lectures</span>
+        <span class="tag">State of the Art</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rObv1FMizXqumgVVdzX4_05" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8. CS221 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>AI: Principles & Techniques <span class="course-code">CS221</span></h2>
+    </div>
+    <div class="card">
+      <p>Broad foundations of AI — search, constraint satisfaction, Bayesian networks, Markov decision processes, logic, and learning. The course that builds the conceptual vocabulary every AI practitioner needs.</p>
+      <div class="tags">
+        <span class="tag">Search Algorithms</span>
+        <span class="tag">Bayesian Networks</span>
+        <span class="tag">Logic</span>
+        <span class="tag">MDPs</span>
+        <span class="tag">Percy Liang</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 9. CS324 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <h2>Large Language Models <span class="course-code">CS324</span></h2>
+    </div>
+    <div class="card">
+      <p>Stanford's dedicated LLM course. Scaling laws, emergent capabilities, alignment, RLHF, societal impact, hallucination, and what frontier models actually do under the hood. Most directly relevant to where AI is today.</p>
+      <div class="tags">
+        <span class="tag">Scaling Laws</span>
+        <span class="tag">RLHF</span>
+        <span class="tag">Alignment</span>
+        <span class="tag">Emergent Capabilities</span>
+        <span class="tag">Percy Liang</span>
+      </div>
+      <a class="watch-btn" href="https://youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Watch Playlist
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="watermark-footer">Sai Sridhar Tarra</div>
+    <p>All lecture content belongs to Stanford University. Curated and organized for the ML community.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -75,6 +75,16 @@ export const reelLinks = [
     date: '2026-04-19',
   },
   {
+    id: 'stanford-ai-courses-01',
+    slug: 'stanford-ai-courses',
+    title: 'Stanford AI & ML Courses',
+    description: '9 free Stanford courses in one place — CS229, CS231n, CS224N, CS224W, CS330, CS234, CS25, CS221, CS324.',
+    tag: 'ML',
+    link: '/stanford-ai-courses.html',
+    cta: 'View Resource',
+    date: '2026-05-02',
+  },
+  {
     id: 'free-api-explorer-01',
     slug: 'free-api-explorer',
     title: 'Free API Explorer',
