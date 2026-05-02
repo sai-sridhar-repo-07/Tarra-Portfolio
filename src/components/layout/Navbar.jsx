@@ -100,16 +100,50 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.08 }}
               transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black text-white"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)' }}
+              className="relative w-9 h-9 flex-shrink-0"
             >
-              S
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <defs>
+                  <linearGradient id="logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" />
+                    <stop offset="100%" stopColor="#06B6D4" />
+                  </linearGradient>
+                  <linearGradient id="logo-border" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.5" />
+                  </linearGradient>
+                </defs>
+                <rect width="100" height="100" rx="22" fill="#0A0A0F" />
+                <rect width="100" height="100" rx="22" fill="none" stroke="url(#logo-border)" strokeWidth="1.5" />
+                <text
+                  x="38" y="67"
+                  fontFamily="'Inter', system-ui, sans-serif"
+                  fontSize="62"
+                  fontWeight="900"
+                  fill="white"
+                  textAnchor="middle"
+                  letterSpacing="-2"
+                >S</text>
+                <circle cx="72" cy="28" r="9" fill="url(#logo-g)" />
+                <circle cx="70" cy="26" r="3.5" fill="white" opacity="0.35" />
+              </svg>
             </motion.div>
-            <span className="font-display font-bold text-white text-sm hidden sm:block">
-              Sai Sridhar
-            </span>
+
+            {/* Wordmark */}
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="font-display font-bold text-white text-sm tracking-tight">
+                Sai
+                <span
+                  className="ml-0.5"
+                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #06B6D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                >.</span>
+              </span>
+              <span className="text-zinc-500 text-[10px] font-medium tracking-widest uppercase">
+                ML Engineer
+              </span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
